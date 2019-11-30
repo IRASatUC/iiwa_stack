@@ -54,7 +54,6 @@
 
     </group>
 
-    <node name="rs_broadcaster" pkg="iiwa_gazebo" type="realsense_tf_broadcast.py"
-           />
+    <node name="tf_broadcaster" pkg="iiwa_gazebo" type="tf_broadcast.py"/>
 
 </launch>

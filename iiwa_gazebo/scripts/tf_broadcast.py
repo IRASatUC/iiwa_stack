@@ -16,7 +16,7 @@ TRANS = (0.204, 0., 0.175)
 # ROT = tf.transformations.quaternion_from_euler(YAW, PITCH, ROLL, 'rzyx')
 # TRANS = (-0.03, 0.0175, 0.03880)
 if __name__ == '__main__':
-    rospy.init_node('realsense_tf_broadcaster')
+    rospy.init_node('tf_broadcast_node')
     br = tf.TransformBroadcaster()
     rate = rospy.Rate(30.0)
     while not rospy.is_shutdown():
@@ -25,4 +25,9 @@ if __name__ == '__main__':
                          rospy.Time.now(),
                          "rs_d435",
                          "iiwa_link_0")
+        br.sendTransform((0., 0., 0.167),
+                         (0., 0., 0., 1.),
+                         rospy.Time.now(),
+                         "iiwa_tcp",
+                         "iiwa_link_ee")
         rate.sleep()
