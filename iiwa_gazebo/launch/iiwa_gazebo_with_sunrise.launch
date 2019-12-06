@@ -10,8 +10,6 @@
   <arg name="robot_name" default="iiwa" />
   <arg name="model" default="iiwa14"/>
   <arg name="trajectory" default="true"/>
-  <arg name="tool_name" default="SchunkAndFingers"/>
-  <arg name="endpoint_frame" default="TCP"/>
 
   <include file="$(find iiwa_gazebo)/launch/iiwa_gazebo.launch">
     <arg name="hardware_interface" value="$(arg hardware_interface)" />
@@ -26,7 +24,5 @@
     <param name="model" value="$(arg model)"/>
   </include>
 
-  <param name="/iiwa/toolName" type="string" value="$(arg tool_name)" />
-  <param name="/iiwa/endpointFrame" type="string" value="$(arg endpoint_frame)" />
 
 </launch>
